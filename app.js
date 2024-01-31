@@ -15,16 +15,25 @@ function verificarIntento() {
       "p",
       `Acertaste el numero en ${intentos} ${intentos === 1 ? "vez" : "veces"}`
     );
+    document.getElementById("reiniciar").removeAttribute("disabled");
   } else {
+    //El usuario no acerto.
     if (numeroDeUsuario > numeroSecreto) {
       asignarTextoElemento("p", "El numero secreto es menor");
     } else {
       asignarTextoElemento("p", "El numero secreto es mayor");
     }
     intentos++;
-    return;
+    limpiarCaja();
   }
+  return;
 }
+//funcion para limpiar la caja de texto
+
+function limpiarCaja() {
+  document.querySelector("#valorUsuario").value = "";
+}
+
 //------------
 function generarNumeroSecreto() {
   return Math.floor(Math.random() * 10) + 1;
