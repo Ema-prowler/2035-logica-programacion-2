@@ -1,5 +1,5 @@
-let numeroSecreto = generarNumeroSecreto();
-let intentos = 1;
+let numeroSecreto = 0;
+let intentos = 0;
 
 function asignarTextoElemento(elemento, texto) {
   let elementoHTML = document.querySelector(elemento);
@@ -41,6 +41,27 @@ function generarNumeroSecreto() {
 
 asignarTextoElemento("h1", "Juego del número secreto!");
 asignarTextoElemento("p", "Indica un numero del 1 al 10");
+//Funcion mensajes iniciales
+function condicionesIniciales() {
+  asignarTextoElemento("h1", "Juego del número secreto!");
+  asignarTextoElemento("p", "Indica un numero del 1 al 10");
+  numeroSecreto = generarNumeroSecreto();
+  intentos = 1;
+}
+
+//funcion reiniciar juego para reiniciar el juego ja.
+function reiniciarJuego(params) {
+  //Limpiar caja
+  limpiarCaja();
+  //Indicar mensaje de intervalo de numeros
+  //Generar el numero aleatorio
+  //Inicialiazar el numero de intentos.
+  condicionesIniciales();
+  //Deshabilitar el boton de nuevo juego
+  document.querySelector("#reiniciar").setAttribute("disabled", "true");
+}
+
+condicionesIniciales();
 //termino HOISTING
 //Alcance o ambito de la variable
 /*tripe igual "===" compara los valores y tambien compara 
