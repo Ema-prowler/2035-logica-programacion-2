@@ -73,7 +73,6 @@ function calcularFactorial(numero) {
   return numero * calcularFactorial(numero - 1);
 }
 
-// Ejemplo de uso
 var numero = 5;
 var resultadoFactorial = calcularFactorial(numero);
 
@@ -94,7 +93,6 @@ function convertirDolaresAReales(valorDolares) {
   return valorReales.toFixed(2);
 }
 
-// Ejemplo de uso
 var valorDolares = 100;
 var resultadoConversion = convertirDolaresAReales(valorDolares);
 
@@ -115,7 +113,6 @@ function calcularAreaYPerimetro(anchura, altura) {
   console.log("Perímetro de la sala: " + perimetro.toFixed(2) + " metros");
 }
 
-// Ejemplo de uso
 var anchuraSala = 5; // en metros
 var alturaSala = 10; // en metros
 
@@ -144,7 +141,6 @@ function calcularAreaYPerimetroCirculo(radio) {
   );
 }
 
-// Ejemplo de uso
 var radioSalaCircular = 3; // en metros
 
 calcularAreaYPerimetroCirculo(radioSalaCircular);
@@ -167,7 +163,142 @@ function mostrarTablaMultiplicar(numero) {
   }
 }
 
-// Ejemplo de uso
 var numeroTabla = 7;
 
 mostrarTablaMultiplicar(numeroTabla);
+//Desafios Arrays
+//array vacio
+let listaGenerica = [];
+//lista de lenguajes de programacions
+let lenguajesDeProgramacion = ["JavaScript", "C", "C++", "Kotlin", "Python"];
+//agregando a la lista otros lenguajes de programcion
+lenguajesDeProgramacion.push("java", "ruby", "GoLang");
+console.log(lenguajesDeProgramacion);
+//Funcion que muestra en coonsola todos los elementos de la lista lenguajesDeProgramacion
+function mostrarLaLista() {
+  console.log(lenguajesDeProgramacion);
+}
+mostrarLaLista();
+//funcion para mostrar lista de manera invertida
+function mostrarListaInvertida() {
+  console.log(lenguajesDeProgramacion.reverse());
+}
+mostrarListaInvertida();
+//funcion que calcula el promedio de los elementos de una lista de numeros
+let listaDeNumeros = [1, 2, 3];
+function promedioDeUnaLista(listaDeNumeros) {
+  let suma = listaDeNumeros.reduce(
+    (acumulador, elemento) => acumulador + elemento,
+    0
+  );
+  return (suma = suma / 3);
+}
+let resultado2 = promedioDeUnaLista(listaDeNumeros);
+console.log("la suma de los elementos es: " + resultado2);
+//funcion que muestre en la consola el numero mas grande y el mas pequeño de una lista
+//reutilizando el array anterior
+function encontrarExtremos(listaDeNumeros) {
+  let numeroMasPequeno = listaDeNumeros[0];
+  let numeroMasGrande = listaDeNumeros[0];
+
+  console.log(
+    "Inicialización: numeroMasPequeno =",
+    numeroMasPequeno,
+    ", numeroMasGrande =",
+    numeroMasGrande
+  );
+
+  for (let i = 1; i < listaDeNumeros.length; i++) {
+    console.log("Inicio de la iteración", i);
+    console.log("Comparando con numeroMasPequeno =", numeroMasPequeno);
+    console.log("Comparando con numeroMasGrande =", numeroMasGrande);
+
+    if (listaDeNumeros[i] < numeroMasPequeno) {
+      numeroMasPequeno = listaDeNumeros[i];
+      console.log("Nuevo numeroMasPequeno:", numeroMasPequeno);
+    }
+
+    if (listaDeNumeros[i] > numeroMasGrande) {
+      numeroMasGrande = listaDeNumeros[i];
+      console.log("Nuevo numeroMasGrande:", numeroMasGrande);
+    }
+
+    console.log("Fin de la iteración", i);
+  }
+
+  console.log("Resultado final:");
+  console.log("El número más pequeño es:", numeroMasPequeno);
+  console.log("El número más grande es:", numeroMasGrande);
+}
+
+encontrarExtremos(listaDeNumeros);
+//funcion suma elementos de una lista
+function promedioDeUnaLista(listaDeNumeros) {
+  let suma = listaDeNumeros.reduce(
+    (acumulador, elemento) => acumulador + elemento,
+    0
+  );
+  return suma;
+}
+let resultado3 = promedioDeUnaLista(listaDeNumeros);
+console.log(resultado3);
+//funcion encontrar posicion
+function encontrarPosicion(elemento, lista) {
+  for (let i = 0; i < lista.length; i++) {
+    if (lista[i] === elemento) {
+      return i; // Devuelve la posición si encuentra el elemento
+    }
+  }
+
+  return -1; // Devuelve -1 si no encuentra el elemento
+}
+
+let miLista = [1, 2, 3, 4, 5];
+let elementoBuscado = 3;
+let posicion = encontrarPosicion(elementoBuscado, miLista);
+
+if (posicion !== -1) {
+  console.log(
+    `El elemento ${elementoBuscado} se encuentra en la posición ${posicion} de la lista.`
+  );
+} else {
+  console.log(`El elemento ${elementoBuscado} no se encuentra en la lista.`);
+}
+//funcion sumar listas
+function sumarListas(lista1, lista2) {
+  if (lista1.length !== lista2.length) {
+    console.log("Las listas no tienen el mismo tamaño.");
+    return null; // Devuelve null si las listas no tienen el mismo tamaño
+  }
+
+  let resultado = [];
+
+  for (let i = 0; i < lista1.length; i++) {
+    resultado.push(lista1[i] + lista2[i]);
+  }
+
+  return resultado;
+}
+
+let listaA = [1, 2, 3];
+let listaB = [4, 5, 6];
+let resultadoSuma = sumarListas(listaA, listaB);
+
+if (resultadoSuma !== null) {
+  console.log("La lista resultante de la suma es:", resultadoSuma);
+}
+//funcion calcular cuadrados
+function calcularCuadrados(listaDeNumeros) {
+  let listaDeCuadrados = [];
+
+  for (let i = 0; i < listaDeNumeros.length; i++) {
+    listaDeCuadrados.push(listaDeNumeros[i] ** 2);
+  }
+
+  return listaDeCuadrados;
+}
+
+let listaOriginal = [1, 2, 3, 4, 5];
+let listaDeCuadrados = calcularCuadrados(listaOriginal);
+
+console.log("La lista de cuadrados es:", listaDeCuadrados);
